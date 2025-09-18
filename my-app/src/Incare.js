@@ -78,10 +78,11 @@ const Incare = () => {
       if (fileInputRef.current) {
         fileInputRef.current.value = "";
       }
-    } catch (error) {
-      console.error("Upload Error:", error);
-      alert("Backend Does not Connected.");
-    } finally {
+    }  catch (error) {
+  console.error("Upload Error:", error);
+  alert("Backend connection failed: " + error.message);
+}
+ finally {
       setLoading(false);
     }
   };
