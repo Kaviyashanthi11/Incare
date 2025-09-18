@@ -17,7 +17,7 @@ const Incare = () => {
 
   // Function to trigger automatic download
   const triggerDownload = (fileId) => {
-    const downloadUrl = `http://localhost:5000/download/${fileId}`;
+    const downloadUrl = `/api/download/${fileId}`;
     const link = document.createElement("a");
     link.href = downloadUrl;
     link.setAttribute("download", "updated_file.xlsx"); 
@@ -40,10 +40,11 @@ const Incare = () => {
     formData.append("originalPath", file.name);
 
     try {
-      const processResponse = await fetch("http://localhost:5000/process", {
-        method: "POST",
-        body: formData,
-      });
+      const processResponse = await fetch("/api/process", {
+  method: "POST",
+  body: formData,
+});
+
 
       const result = await processResponse.json();
 
