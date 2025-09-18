@@ -1,6 +1,8 @@
 {
   "rewrites": [
-    { "source": "/api/:match*", "destination": "https://incare.onrender.com/api/:match*" },
-    { "source": "/(.*)", "destination": "/index.html" }
+    {
+      "source": "/api/(.*)",
+      "destination": "https://incare.onrender.com/api/$1"
+    }
   ]
 }
